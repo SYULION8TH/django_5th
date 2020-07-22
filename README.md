@@ -7,8 +7,7 @@
     ```
     git clone https://github.com/SYULION8TH/django_5th
     ```
-2. 가상환경 생성<br>
-clone받은 django_5th 경로에서 생성해주세요. 
+2. 가상환경 생성(clone받은 django_5th 경로에서 생성해주세요. )
     - window
     ```
     python -m venv env
@@ -17,6 +16,10 @@ clone받은 django_5th 경로에서 생성해주세요.
     ```
     python3 -m venv env
     ```
-
+3. requirements.txt 설치
+    ```
+    pip install -r requirements.txt
+    ```
+---
 #### 최종 코드 보기
 - [likelion_8th_session_11th](https://github.com/marobew/likelion_8th_session_11th)
