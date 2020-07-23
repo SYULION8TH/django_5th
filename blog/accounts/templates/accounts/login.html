@@ -2,8 +2,7 @@
 {% block contents %}
 <!-- content -->
 <div class="container mt-5">
-    <form class="form-signin" action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
+    <form class="form-signin" action="{% url 'login' %}">
         <div class="text-center mb-4">
             <h1 class="h3 mb-3 font-weight-normal mt-4">Login</h1>
         </div>
