@@ -58,6 +58,12 @@ def signup(request):
             return redirect('index')
     return render(request, 'accounts/signup.html')
 ```
+#### signup 함수 설명
+`request`방식이 `POST`이고 입력비밀번호(password1)와 확인비밀번호(password2)가 같으면<br>
+`create_user`함수를 호출하여 User객체를 생성합니다. <br>
+`login`함수를 호출하여 자동으로 로그인 되도록 한 후<br>
+`redirect`함수를 호출하여 root 페이지인 index로 이동합니다. <br>
+만약 회원가입에 실패한다면 다시 회원가입 페이지로 이동합니다. 
 ```
 def login(request):
     if request.method == 'POST':
@@ -72,6 +78,15 @@ def login(request):
     else:
         return render(request, 'accounts/login.html')
 ```
+#### login 함수 설명
+`request`방식이 `POST`이면 <br>
+`username`, `password` 값을 변수에 저장한 후 <br>
+`authenticate`함수 호출로 존재하는 계정인지 확인합니다. <br>
+존재하는 계정일 경우(not None)<br>
+`login`함수를 호출하여 자동으로 로그인 되도록 한 후<br>
+`redirect`함수를 호출하여 root 페이지인 index로 이동합니다. <br>
+존재 하지 않는 계정인 경우 에러메세지와 함께 다시 login 페이지로 이동합니다. <br>
+request방식이 POST가 아닐 경우 다시 login 페이지로 이동합니다.
 ```
 def logout(request):
     if request.method == 'POST':
