@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block contents %}
+<!-- content -->
+<div class="container mt-5">
+    <form class="form-signin" action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-normal mt-4">Signup</h1>
+        </div>
+        
+        <div class="form-label-group mb-3">
+            <label for="Username">Username</label>
+            <input name="username" type="text" class="form-control" placeholder="Username" required autofocus>
+        </div>
+        
+        <div class="form-label-group mb-3">
+            <label for="Password">Password</label>
+            <input name="password1" type="password" class="form-control" placeholder="Password" required>
+        </div>
+
+        <div class="form-label-group mb-3">
+            <label for="Password">Password 확인</label>
+            <input name="password2" type="password" class="form-control" placeholder="Password 재입력" required>
+            </div>
+        
+        <input class="btn btn-lg btn-dark btn-block" type="submit" value="Sign up">
+    </form>
+</div>
+<!-- //content -->
+{% endblock %}
+
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    ...
+</form>
